@@ -190,7 +190,7 @@ class Yii1 extends Framework
         foreach ($parameters as $name => $value) {
             $template = str_replace("#$name#", $value, $template);
         }
-        return '/^' . $template . '$/u';
+        return '#^' . $template . '$#u';
     }
 
 
