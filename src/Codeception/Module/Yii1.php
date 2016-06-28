@@ -247,7 +247,7 @@ class Yii1 extends Framework implements PartedModule
     {
         $domains = [$this->getDomainRegex(Yii::app()->request->getHostInfo())];
         if (Yii::app()->urlManager->urlFormat === 'path') {
-            $rules = ReflectionHelper::readPrivateProperty(Yii::app()->urlManager, '_rules');
+            $rules = ReflectionHelper::readPrivateProperty(Yii::app()->urlManager, '_rules', '\CUrlManager');
             foreach ($rules as $rule) {
                 if ($rule->hasHostInfo === true) {
                     $domains[] = $this->getDomainRegex($rule->template, $rule->params);
