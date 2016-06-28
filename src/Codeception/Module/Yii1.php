@@ -201,7 +201,7 @@ class Yii1 extends Framework
      */
     public function getInternalDomains()
     {
-        $domains = [$this->getDomainRegex(Yii::app()->request->getHostInfo())];
+        $domains = [$this->getDomainRegex(Yii::app()->request->getHostInfo() . '/')];
         if (Yii::app()->urlManager->urlFormat === 'path') {
             $rules = ReflectionHelper::readPrivateProperty(Yii::app()->urlManager, '_rules');
             foreach ($rules as $rule) {
