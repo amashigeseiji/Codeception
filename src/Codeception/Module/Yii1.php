@@ -224,7 +224,7 @@ class Yii1 extends Framework implements PartedModule
      */
     private function getDomainRegex($template, $parameters = [])
     {
-        if (preg_match('#https?://(.*?)/#', $template, $matches)) {
+        if (preg_match('@^(?:https?://)?([^/]+)@i', $template, $matches)) {
             $template = $matches[1];
         }
         if (strpos($template, '<') !== false) {
